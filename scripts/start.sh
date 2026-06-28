@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # echo "Cloning Template..."
-# git clone https://github.com/ennas-de/mern
+# git clone https://github.com/altruva-group/mernify
 
 # echo "Building Application..."
 # docker-compose up -d --build
@@ -29,6 +29,8 @@ docker compose up -d logstash
 
 echo "Waiting for 15 seconds..."
 sleep 15
+
+# checking Kafka status (optional)
 
 # check_kafka_status() {
 #     echo "Checking Kafka service status..."

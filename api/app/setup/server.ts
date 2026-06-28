@@ -11,7 +11,7 @@ import { initRedis } from "@/globals";
 
 dotenv.config();
 
-const port = process.env.PORT || 5000;
+const port = process.env.API_PORT || 10000;
 
 const runServer = async () => {
     try {
