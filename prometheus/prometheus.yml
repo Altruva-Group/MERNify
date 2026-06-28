@@ -1,0 +1,38 @@
+global:
+  scrape_interval: 15s  # Set the scrape interval to every 15 seconds
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'kafka'
+    static_configs:
+      - targets: ['kafka:29092']
+
+  - job_name: 'elasticsearch'
+    static_configs:
+      - targets: ['elasticsearch:9200']
+
+  - job_name: 'logstash'
+    static_configs:
+      - targets: ['logstash:9600']
+
+  - job_name: 'node_server'
+    honor_labels: true
+    static_configs:
+      # - targets: ['server-1:5000', 'server-2:5000']
+      - targets: ['MERN_TEMPLATE_API:5000']
+
+  - job_name: 'nginx'
+    static_configs:
+      - targets: ['nginx:80']
+
+  - job_name: 'docker'
+    static_configs:
+      - targets: ['host.docker.internal:9323']  # If running on Docker Desktop
+
+  - job_name: 'grafana'
+    static_configs:
+      - targets: ['grafana:3000']
+

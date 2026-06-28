@@ -1,0 +1,107 @@
+# ====================================================== #
+# xpack.security.enabled: true
+# xpack.security.enrollment.enabled: true
+
+# # Enable encryption for HTTP API client connections (Kibana, Logstash, etc.)
+# xpack.security.http.ssl:
+#   enabled: true
+#   keystore.path: certs/elasticsearch-http.p12
+#   keystore.password: ${keystore.password}
+
+# # Enable encryption and mutual authentication between cluster nodes
+# xpack.security.transport.ssl:
+#   enabled: true
+#   verification_mode: certificate
+#   keystore.path: certs/elasticsearch-transport.p12
+#   keystore.password: ${keystore.password}
+#   truststore.path: certs/elasticsearch-trust.p12
+#   truststore.password: your_truststore_password
+
+# # Allow secure HTTP API connections
+# http.host: 0.0.0.0
+
+# # Allow other nodes to securely join the cluster
+# transport.host: 0.0.0.0
+
+# ingest.geoip.downloader.enabled: false
+
+
+
+
+# # ====================================================== #
+# # Security settings (if needed)
+# xpack.security.enabled: true
+# xpack.security.enrollment.enabled: true
+
+# # HTTP API encryption
+# # Enabled encryption for HTTP API client connections, such as Kibana, Logstash, and Agents
+# xpack.security.http.ssl:
+#   enabled: true
+#   certificate: /usr/share/elasticsearch/config/certs/elasticsearch-node/elasticsearch-node.crt
+#   key: /usr/share/elasticsearch/config/certs/elasticsearch-node/elasticsearch-node.key
+#   certificate_authorities: /usr/share/elasticsearch/config/certs/ca/ca.crt
+
+# # Transport layer encryption
+# # Enable encryption and mutual authentication between cluster nodes
+# xpack.security.transport.ssl:
+#   enabled: true
+#   verification_mode: certificate
+#   certificate: /usr/share/elasticsearch/config/certs/elasticsearch-node/elasticsearch-node.crt
+#   key: /usr/share/elasticsearch/config/certs/elasticsearch-node/elasticsearch-node.key
+#   certificate_authorities: /usr/share/elasticsearch/config/certs/ca/ca.crt
+
+# # Network settings
+# # Allow HTTP API connections from anywhere
+# # Connections are encrypted and require user authentication
+# network.host: 0.0.0.0
+# http.host: 0.0.0.0
+# http.port: 9200
+
+# # Allow other nodes to join the cluster from anywhere
+# # Connections are encrypted and mutually authenticated
+# # transport.host: 0.0.0.0
+
+# # GeoIP Downloader
+# # The GeoIP processor requires the GeoIP database to be installed on each node.
+# ingest.geoip.downloader.enabled: false
+
+# # Cluster settings
+# # Cluster name and node name
+# cluster.name: "docker-cluster"
+# node.name: "elasticsearch-node"
+
+# # Discovery settings (for single-node setup)
+# discovery.type: single-node
+
+# # Monitoring settings
+# # Enable Prometheus monitoring
+# xpack.monitoring.templates.enabled: true
+
+# # ----------------------- END SECURITY AUTO CONFIGURATION ------------------------- #
+
+
+# ====================================================== #
+
+xpack.security.enabled: false
+xpack.security.enrollment.enabled: false
+
+# Enabled encryption for HTTP API client connections, such as Kibana, Logstash, and Agents
+xpack.security.http.ssl:
+  enabled: false
+
+# Enable encryption and mutual authentication between cluster nodes
+xpack.security.transport.ssl:
+  enabled: false
+
+# Allow HTTP API connections from anywhere
+# Connections are encrypted and require user authentication
+network.host: 0.0.0.0
+http.host: 0.0.0.0
+http.port: 9200
+
+# Allow other nodes to join the cluster from anywhere
+# Connections are encrypted and mutually authenticated
+# transport.host: 0.0.0.0
+
+ingest.geoip.downloader.enabled: false
+#----------------------- END SECURITY AUTO CONFIGURATION -------------------------
