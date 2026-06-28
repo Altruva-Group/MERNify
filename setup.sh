@@ -14,5 +14,8 @@ cp .env-template .env
 # start the application
 bash ./scripts/start.sh
 
+# feel free to use the rest of the files inside the ./scripts/ dir. Only the ./scripts/start.sh script has been used.
+
 # setup complete
-echo "Setup complete! You can now access the application at http://localhost:5173"
+echo "Setup complete! You can now access the application at http://localhost:5173."
+echo "For other use cases, check the ./scripts dir. Only the ./scripts/start.sh script has been used to start the application."
